@@ -1,17 +1,14 @@
 import React, { FC } from "react";
 import FirstPage from "./components/Header";
 import ThirdPage from "./components/ThirdPage";
-import SecondPage from "./components/Todo";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { darkBlue, orange, white } from "../common/CommonColors";
 import SettingsScreen from "./components/SettingsScreen";
 import ProfileScreen from "./components/ProfileScreen";
 import NotificationsScreen from "./components/Notifications";
-import ChatScreen from "./components/Chat";
-import { StyleSheet, View, Image, TouchableOpacity } from "react-native";
+import { StyleSheet, View } from "react-native";
 import {
   AntDesign,
-  Ionicons,
   MaterialCommunityIcons,
   SimpleLineIcons,
 } from "expo-vector-icons";
@@ -92,6 +89,7 @@ export default function BottomNavigationComponent() {
         name="Notifications"
         component={NotificationsScreen}
         options={{
+          tabBarBadge: 1,
           tabBarIcon: ({ focused }) => (
             <View>
               <SimpleLineIcons

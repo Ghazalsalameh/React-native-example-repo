@@ -1,6 +1,3 @@
-// Custom Navigation Drawer / Sidebar with Image and Icon in Menu Options
-// https://aboutreact.com/custom-navigation-drawer-sidebar-with-image-and-icon-in-menu-options/
-
 import React from "react";
 import {
   SafeAreaView,
@@ -18,14 +15,10 @@ import {
 } from "@react-navigation/drawer";
 
 const CustomSidebarMenu = (props) => {
-  const BASE_PATH =
-    "https://raw.githubusercontent.com/AboutReact/sampleresource/master/";
-  const proileImage = "react_logo.png";
-
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Image
-        source={{ uri: BASE_PATH + proileImage }}
+        source={require("./screens/Icons/Imgs/logo.png")}
         style={styles.sideMenuProfileIcon}
       />
       <DrawerContentScrollView {...props}>
