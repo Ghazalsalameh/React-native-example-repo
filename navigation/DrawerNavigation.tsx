@@ -1,40 +1,25 @@
 import React from "react";
-import { createDrawerNavigator } from "@react-navigation/drawer";
-import CustomSidebarMenu from "../AppMenu";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import BottomNavigationComponent from "../screens/BottomNavigation.component";
-import NotificationsScreen from "../screens/components/Notifications";
 
-const Stack = createNativeStackNavigator();
+import { createDrawerNavigator } from "@react-navigation/drawer";
+
+import { ContactStackNavigator } from "./StackNavigator";
+import CustomSidebarMenu from "../AppMenu";
+import BottomNavigationComponent from "../screens/BottomNavigation.component";
+
 const Drawer = createDrawerNavigator();
 
-function FirstScreenStack() {
-  return (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}
-    >
-      <Stack.Group
-        screenOptions={{ headerStyle: { backgroundColor: "papayawhip" } }}
-      >
-        <Stack.Screen name="FirstPage" component={BottomNavigationComponent} />
-        <Stack.Screen name="CallNow" component={BottomNavigationComponent} />
-      </Stack.Group>
-    </Stack.Navigator>
-  );
-}
-
-export default function DrawerComponent() {
+const DrawerNavigator = () => {
   return (
     <Drawer.Navigator
       drawerContent={(props) => <CustomSidebarMenu {...props} />}
       screenOptions={{
         headerTintColor: "white",
+        headerTitleStyle: {
+          display: "none",
+        },
       }}
     >
       <Drawer.Screen
-        name="Services provided by SehhaCity"
         options={{
           headerStyle: {
             backgroundColor: "#1B2346",
@@ -43,10 +28,10 @@ export default function DrawerComponent() {
             color: "white",
           },
         }}
-        component={FirstScreenStack}
+        name="Services provided by SehhaCity"
+        component={BottomNavigationComponent}
       />
       <Drawer.Screen
-        name="Notifications"
         options={{
           headerStyle: {
             backgroundColor: "#1B2346",
@@ -55,8 +40,11 @@ export default function DrawerComponent() {
             color: "white",
           },
         }}
-        component={NotificationsScreen}
+        name="CallNow"
+        component={ContactStackNavigator}
       />
     </Drawer.Navigator>
   );
-}
+};
+
+export default DrawerNavigator;

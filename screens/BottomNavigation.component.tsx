@@ -1,6 +1,5 @@
 import React, { FC } from "react";
-import FirstPage from "./components/Header";
-import ThirdPage from "./components/ThirdPage";
+import FirstPage from "./components/HomePage";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { darkBlue, orange, white } from "../common/CommonColors";
 import SettingsScreen from "./components/SettingsScreen";
@@ -12,6 +11,7 @@ import {
   MaterialCommunityIcons,
   SimpleLineIcons,
 } from "expo-vector-icons";
+import ChatScreen from "./components/Chat";
 
 const Tab = createBottomTabNavigator();
 
@@ -103,7 +103,7 @@ export default function BottomNavigationComponent() {
       />
       <Tab.Screen
         name="Chat"
-        component={ThirdPage}
+        component={ChatScreen}
         options={{
           tabBarIcon: ({ focused }) => (
             <View>

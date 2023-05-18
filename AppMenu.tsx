@@ -1,38 +1,24 @@
 import React from "react";
-import {
-  SafeAreaView,
-  View,
-  StyleSheet,
-  Image,
-  Text,
-  Linking,
-} from "react-native";
+import { SafeAreaView, StyleSheet, Image } from "react-native";
 
 import {
   DrawerContentScrollView,
   DrawerItemList,
-  DrawerItem,
 } from "@react-navigation/drawer";
+import { TouchableOpacity } from "react-native";
 
 const CustomSidebarMenu = (props) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <Image
-        source={require("./screens/Icons/Imgs/logo.png")}
-        style={styles.sideMenuProfileIcon}
-      />
+      <TouchableOpacity onPress={() => props.navigation.navigate("Home")}>
+        <Image
+          source={require("./screens/Icons/Imgs/logo.png")}
+          style={styles.sideMenuProfileIcon}
+        />
+      </TouchableOpacity>
       <DrawerContentScrollView {...props}>
         <DrawerItemList {...props} />
       </DrawerContentScrollView>
-      <Text
-        style={{
-          fontSize: 16,
-          textAlign: "center",
-          color: "grey",
-        }}
-      >
-        www.aboutreact.com
-      </Text>
     </SafeAreaView>
   );
 };

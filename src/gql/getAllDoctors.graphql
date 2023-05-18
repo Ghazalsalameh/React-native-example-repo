@@ -1,0 +1,39 @@
+query getAllDoctors(
+  $after: String
+  $before: String
+  $filter: DoctorFilterInput
+  $first: Int
+  $last: Int
+  $sortBy: DoctorOrder
+) {
+  doctors(
+    after: $after
+    before: $before
+    filter: $filter
+    first: $first
+    last: $last
+    sortBy: $sortBy
+  ) {
+    edges {
+      node {
+        id
+        vendor {
+          id
+          name
+        }
+        availabilityStatus
+        bio
+        languages
+        bio
+        yearsOfExperience
+      }
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+      hasPreviousPage
+      startCursor
+    }
+    totalCount
+  }
+}

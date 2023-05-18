@@ -3,9 +3,8 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { StyleSheet } from "react-native";
-import DrawerComponent from "./common/Drawer.component";
 import { MyTheme } from "./common/Theme";
+import DrawerNavigator from "./navigation/DrawerNavigation";
 
 const client = new ApolloClient({
   uri: "https://api.sk-dev.sehacity.com/graphql",
@@ -17,7 +16,7 @@ function App() {
     <NavigationContainer theme={MyTheme}>
       <SafeAreaProvider>
         <ApolloProvider client={client}>
-          <DrawerComponent />
+          <DrawerNavigator />
         </ApolloProvider>
       </SafeAreaProvider>
     </NavigationContainer>

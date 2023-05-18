@@ -1,0 +1,20 @@
+schema:
+  - ./schema.graphql
+
+generates:
+  ./src:
+    preset: near-operation-file
+    documents: "./**/**/*.graphql"
+    presetConfig:
+      extension: .tsx
+      baseTypesPath: ~/types
+      folder: __generated__
+    config:
+      withHooks: true
+      withComponent: false
+      withHOC: false
+    plugins:
+      - add:
+          content: "/* eslint-disable */\n/* prettier-ignore */"
+      - typescript-operations
+      - typescript-react-apollo

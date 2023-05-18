@@ -12,7 +12,6 @@ export const headerStyles = StyleSheet.create({
     borderBottomRightRadius: 25,
   },
   container: {
-    flexDirection: "row",
     marginTop: -60,
   },
 

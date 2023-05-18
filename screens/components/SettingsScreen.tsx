@@ -24,12 +24,12 @@ const SettingsPage = ({ navigation }) => {
           </Text>
           <Button
             color={orange}
-            onPress={() => navigation.navigate("FirstPage")}
-            title="Go to First Page"
+            onPress={() => navigation.navigate("Home")}
+            title="Go to Home Page"
           />
           <Button
-            onPress={() => navigation.navigate("SecondPage")}
-            title="Go to Second Page"
+            onPress={() => navigation.navigate("Profile")}
+            title="Go to Profile Page"
           />
         </View>
       </View>
