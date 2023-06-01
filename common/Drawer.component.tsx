@@ -4,6 +4,7 @@ import CustomSidebarMenu from "../AppMenu";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import BottomNavigationComponent from "../screens/BottomNavigation.component";
 import NotificationsScreen from "../screens/components/Notifications";
+import { darkBlue } from "./CommonColors";
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -13,11 +14,14 @@ function FirstScreenStack() {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
+        headerBackButtonMenuEnabled: true,
+        headerBackVisible: true,
+        headerStyle: {
+          backgroundColor: darkBlue,
+        },
       }}
     >
-      <Stack.Group
-        screenOptions={{ headerStyle: { backgroundColor: "papayawhip" } }}
-      >
+      <Stack.Group>
         <Stack.Screen name="FirstPage" component={BottomNavigationComponent} />
         <Stack.Screen name="CallNow" component={BottomNavigationComponent} />
       </Stack.Group>

@@ -5,6 +5,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import { ContactStackNavigator } from "./StackNavigator";
 import CustomSidebarMenu from "../AppMenu";
 import BottomNavigationComponent from "../screens/BottomNavigation.component";
+import { white } from "../common/CommonColors";
 
 const Drawer = createDrawerNavigator();
 
@@ -34,10 +35,7 @@ const DrawerNavigator = () => {
       <Drawer.Screen
         options={{
           headerStyle: {
-            backgroundColor: "#1B2346",
-          },
-          headerTitleStyle: {
-            color: "white",
+            backgroundColor: white,
           },
         }}
         name="CallNow"

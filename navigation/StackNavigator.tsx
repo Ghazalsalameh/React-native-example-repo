@@ -2,6 +2,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from "react";
 import { CallNow } from "../screens/components/CallNow";
 import ChatScreen from "../screens/components/Chat";
+import { Doctors } from "../screens/components/Doctors";
 import HomePage from "../screens/components/HomePage";
 import ProfileScreen from "../screens/components/ProfileScreen";
 
@@ -28,6 +29,7 @@ function ContactStackNavigator() {
       }}
     >
       <Stack.Screen name="CallNow" component={CallNow} />
+      <Stack.Screen name="doctors" component={Doctors} />
     </Stack.Navigator>
   );
 }
